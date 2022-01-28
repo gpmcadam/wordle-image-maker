@@ -70,7 +70,7 @@ function InfoModal({ onClose }) {
           </p>
           <p>
             Interested in how this was built? Check out{" "}
-            <a href="#" target="_blank" rel="noreferrer">
+            <a href="https://github.com/gpmcadam/wordle-image-maker" target="_blank" rel="noreferrer">
               the code on GitHub
             </a>
             .
