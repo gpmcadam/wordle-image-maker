@@ -2,7 +2,7 @@
   "name": "wordle-image-maker",
   "private": true,
   "source": "src/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "> 0.5%, last 2 versions, not dead, not ios_saf < 13",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
