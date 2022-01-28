@@ -1,0 +1,35 @@
+{
+  "name": "wordle-image-maker",
+  "private": true,
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "lint": "npm run _eslint",
+    "check-format": "npm run _prettier -- --list-different",
+    "format": "npm run _prettier -- --write",
+    "_prettier": "prettier \"{,!(node_modules)/**/}*.js\"",
+    "_eslint": "eslint \"{,!(node_modules)/**/}*.js\""
+  },
+  "devDependencies": {
+    "@parcel/transformer-svg-react": "^2.2.1",
+    "eslint": "^8.7.0",
+    "eslint-plugin-react": "^7.28.0",
+    "install": "^0.13.0",
+    "npm": "^8.3.2",
+    "parcel": "^2.2.1",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
+  },
+  "alias": {
+    "app": "./src"
+  }
+}
