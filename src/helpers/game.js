@@ -45,23 +45,24 @@ export const calculateMatches = (words) => {
 
   if (solutionIndex > 0) {
     for (let y = 0; y < solutionIndex; y++) {
+      const remaining = _.clone(solution);
       for (let x = 0; x <= MAX_LEN - 1; x++) {
-        const guessChr = words[y][x];
-        const guessFreq = words[y].filter((chr) => chr === guessChr).length;
-        const foundFreq = solution.filter((chr) => chr === guessChr).length;
+        const chr = words[y][x];
+        const foundIndex = remaining.indexOf(chr);
 
-        if (solution[x] === guessChr) {
+        if (solution[x] === chr) {
+          remaining[x] = null;
           matches[y][x] = "full";
-        } else if (solution.indexOf(guessChr) < 0 || guessFreq > foundFreq) {
-          matches[y][x] = "miss";
-        } else {
+        } else if (foundIndex >= 0) {
+          remaining[foundIndex] = null;
           matches[y][x] = "partial";
+        } else {
+          matches[y][x] = "miss";
         }
       }
     }
   }
 
   _.fill(matches[solutionIndex], "full");
-
   return matches;
 };
