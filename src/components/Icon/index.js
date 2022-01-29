@@ -5,6 +5,8 @@ import IconCloudDownloadSvg from "./cloud-download-outline.svg";
 import IconInformationCircleSvg from "./information-circle-outline.svg";
 import IconBackspaceSvg from "./backspace-outline.svg";
 import IconCloseSvg from "./close-outline.svg";
+import IconSunnySvg from "./sunny-outline.svg";
+import IconMoonSvg from "./moon-outline.svg";
 
 const DEFAULT_SIZE = { width: 20, height: 20 };
 
@@ -13,6 +15,8 @@ const Icons = {
   backspace: IconBackspaceSvg,
   info: IconInformationCircleSvg,
   download: IconCloudDownloadSvg,
+  moon: IconMoonSvg,
+  sunny: IconSunnySvg,
 };
 
 export default function Icon({ icon }) {

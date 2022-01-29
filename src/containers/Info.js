@@ -12,7 +12,7 @@ const Overlay = styled.div`
   top: 0;
   left: 0;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: ${({ theme }) => theme.opacity50};
   z-index: 2000;
 `;
 
@@ -24,7 +24,7 @@ const Modal = styled.div`
   flex-direction: column;
   width: 500px;
   max-height: 500px;
-  background: white;
+  background: ${({ theme }) => theme.colorBackground};
   border-radius: 5px;
   margin-top: 100px;
 `;
@@ -70,7 +70,11 @@ function InfoModal({ onClose }) {
           </p>
           <p>
             Interested in how this was built? Check out{" "}
-            <a href="https://github.com/gpmcadam/wordle-image-maker" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/gpmcadam/wordle-image-maker"
+              target="_blank"
+              rel="noreferrer"
+            >
               the code on GitHub
             </a>
             .

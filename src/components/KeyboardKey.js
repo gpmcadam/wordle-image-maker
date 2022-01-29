@@ -12,8 +12,8 @@ const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
-  background-color: #818384;
-  color: white;
+  background-color: ${({ theme }) => theme.keyBg};
+  color: ${({ theme }) => theme.keyTextColor};
   flex: ${({ large }) => (large ? "1.5" : "1")};
   display: flex;
   justify-content: center;

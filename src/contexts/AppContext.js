@@ -10,6 +10,7 @@ import {
   decrementCursor,
   incrementCursor,
 } from "app/helpers/game";
+import { DEFAULT_THEME } from "app/theme";
 
 const AppStateContext = createContext();
 
@@ -48,6 +49,13 @@ function reducer(state, action) {
       };
     }
 
+    case "toggle_theme": {
+      return {
+        ...state,
+        themeName: state.themeName === "day" ? "night" : "day",
+      };
+    }
+
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -59,6 +67,7 @@ function AppStateProvider({ children }) {
     words: DEFAULT_GRID,
     matches: DEFAULT_GRID,
     cursor: { x: 0, y: 0 },
+    themeName: DEFAULT_THEME,
   });
   const value = { state, dispatch };
 

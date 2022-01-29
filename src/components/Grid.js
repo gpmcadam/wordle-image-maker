@@ -15,18 +15,18 @@ const GridOuter = styled.div`
   flex: 1;
   height: 100%;
   align-items: center;
+  justify-content: center;
 `;
 
 const GridContainer = styled.div`
   display: flex;
-  background: white;
+  background: ${({ theme }) => theme.colorBackground};
   flex-direction: column;
   gap: 4px;
 `;
 
 const Watermark = styled.div`
-  background: white;
-  color: #333;
+  background: ${({ theme }) => theme.colorBackground};
   font-family: monospace;
   text-align: center;
   font-weight: bold;
@@ -41,8 +41,8 @@ export default function Grid({
 }) {
   return (
     <GridOuter ref={forwardRef}>
-      {showWatermark && <Watermark>wordle.gary.mcad.am</Watermark>}
       <GridContainer>
+        {showWatermark && <Watermark>wordle.gary.mcad.am</Watermark>}
         {words.map((row, i) => (
           <Row key={`row-${i}`}>
             {row.map((col, j) => (
