@@ -4,6 +4,7 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead, not ios_saf < 13",
   "scripts": {
+    "postbuild": "cp static/* dist/",
     "start": "parcel",
     "build": "parcel build",
     "lint": "npm run _eslint",
@@ -13,7 +14,9 @@
     "_eslint": "eslint \"{,!(node_modules)/**/}*.js\""
   },
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.2.1",
     "@parcel/transformer-svg-react": "^2.2.1",
+    "@parcel/transformer-webmanifest": "^2.2.1",
     "eslint": "^8.7.0",
     "eslint-plugin-react": "^7.28.0",
     "install": "^0.13.0",
