@@ -1,0 +1,3 @@
+Created by Gary McAdam
+
+Source code: https://github.com/gpmcadam/wordle-image-maker
