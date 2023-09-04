@@ -7,30 +7,6 @@ import { Game, GameKeyboard, Controls, Info } from "app/containers";
 import { useAppState } from "app/contexts/AppContext";
 import { getTheme, ThemeProvider, GlobalStyle } from "app/theme";
 
-const Dummy = styled.div`
-  flex: 1;
-  display: none;
-
-  @media only screen and (min-width: 600px) {
-    display: block;
-  }
-`;
-
-const AdContainer = styled.div`
-  flex: 1;
-  display: none;
-
-  @media only screen and (min-width: 600px) {
-    display: block;
-  }
-`;
-
-const Main = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-`;
-
 const Container = styled.div`
   margin: 0 auto;
   display: flex;
@@ -69,21 +45,6 @@ const Header = styled.header`
   border-bottom: 1px solid ${({ theme }) => theme.colorTone4};
 `;
 
-function Ad() {
-  const raw = `<script type="text/javascript">
-	atOptions = {
-		'key' : '5f300c757e4323244d89012b4e4ea537',
-		'format' : 'iframe',
-		'height' : 300,
-		'width' : 160,
-		'params' : {}
-	};
-	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitablecreativeformat.com/5f300c757e4323244d89012b4e4ea537/invoke.js"></scr' + 'ipt>');
-</script>`;
-
-  return <AdContainer dangerouslySetInnerHTML={{ __html: raw }} />;
-}
-
 export default function App() {
   const {
     state: { themeName },
@@ -103,21 +64,17 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Main>
-        <Dummy>&nbsp;</Dummy>
-        <Container>
-          <Header>
-            <Info />
-            <Title>WORDLE MAKER</Title>
-            <Controls onShare={onShare} />
-          </Header>
-          <GameContainer>
-            <Game forwardRef={ref} showWatermark={showWatermark} />
-          </GameContainer>
-          <GameKeyboard />
-        </Container>
-        <Ad />
-      </Main>
+      <Container>
+        <Header>
+          <Info />
+          <Title>WORDLE MAKER</Title>
+          <Controls onShare={onShare} />
+        </Header>
+        <GameContainer>
+          <Game forwardRef={ref} showWatermark={showWatermark} />
+        </GameContainer>
+        <GameKeyboard />
+      </Container>
     </ThemeProvider>
   );
 }
